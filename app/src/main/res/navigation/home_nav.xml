@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.project.powerref1.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"
+     />
+
+    <fragment
+        android:id="@+id/jobsFragment"
+        android:name="com.project.powerref1.fragments.JobsFragment"
+        android:label="fragment_jobs"
+        tools:layout="@layout/fragment_jobs">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/referralFragment"
+        android:name="com.project.powerref1.fragments.referralFragment"
+        android:label="fragment_alert"
+        tools:layout="@layout/fragment_referral" />
+    <fragment
+        android:id="@+id/resumeFragment"
+        android:name="com.project.powerref1.fragments.ResumeFragment"
+        android:label="fragment_mock_test"
+        tools:layout="@layout/fragment_resume" />
+</navigation>
