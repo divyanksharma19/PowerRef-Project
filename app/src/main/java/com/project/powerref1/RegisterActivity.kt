@@ -27,16 +27,27 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.registerBtn.setOnClickListener {
             val email = binding.email.text.toString().trim()
+            val firstname = binding.firstname.text.toString()
+            val lastname = binding.lastname.text?.toString()
             val password = binding.password.text.toString().trim()
             val confirmPassword = binding.confirmPassword.text.toString().trim()
 
+            if (!isValidEmail(email)) {
+                return@setOnClickListener
+            }
+
+
+            // Validate first name
+            if (!isValidFirstName(firstname)) {
+                return@setOnClickListener
+            }
             // Validate password and confirm password
             if (!isValidPassword(password, confirmPassword)) {
                 return@setOnClickListener
             }
 
             // Prepare the signup request
-            val signupRequest = SignupRequest(email, password)
+            val signupRequest = SignupRequest(email, firstname,lastname,password)
 
             // Call the signup API
             callSignupApi(signupRequest)
@@ -59,6 +70,28 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
+    private fun isValidFirstName(firstName: String): Boolean {
+        return if (firstName.isEmpty()) {
+            Toast.makeText(this, "First name cannot be empty", Toast.LENGTH_SHORT).show()
+            false
+        } else if (!firstName.matches("^[a-zA-Z]+$".toRegex())) {
+            Toast.makeText(this, "First name can only contain letters", Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            true
+        }
+    }
+    private fun isValidEmail(email: String): Boolean {
+        return if (email.isEmpty()) {
+            Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show()
+            false
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            true
+        }
+    }
 
     private fun callSignupApi(signupRequest: SignupRequest) {
         RetrofitClient.instance.signup(signupRequest)
@@ -70,7 +103,10 @@ class RegisterActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val token = response.body()?.token
                         Toast.makeText(this@RegisterActivity, "Signup successful !", Toast.LENGTH_LONG).show()
-                        // Save token for future use (e.g., in SharedPreferences)
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // Needed if starting activity from non-activity context
+                        startActivity(intent)
+                        finish()
                     } else {
                         Toast.makeText(this@RegisterActivity, "Signup failed: ${response.message()}", Toast.LENGTH_LONG).show()
                     }

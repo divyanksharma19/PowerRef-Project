@@ -62,7 +62,7 @@
         android:fontFamily="@font/dm_sans_regular"/>
 
     <Button
-        android:id="@+id/attachButton"
+        android:id="@+id/signInBtn"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

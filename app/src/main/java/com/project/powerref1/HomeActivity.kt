@@ -15,6 +15,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityHomeBinding.inflate(layoutInflater)
+        UserInfoManager.loadUserInfo(this)
         setContentView(binding.root)
         setupBottomNavigation()
     }

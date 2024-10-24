@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+>
+
+    <TextView
+        android:id="@+id/tvSearchHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dm_sans_bold"
+        android:paddingVertical="@dimen/small_padding"
+        android:text = "Find people to get referral"
+        android:textColor="@color/text_color"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dm_sans_bold"
+        android:paddingVertical="@dimen/small_padding"
+        android:text = "Select Company"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etSearchContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_margin"
+        android:hint="@string/field_search"
+        app:boxStrokeColor="@color/box_stroke_color"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/text_color"
+        app:placeholderText="e.g - American Express"
+        app:startIconDrawable="@drawable/ic_search">
+        <AutoCompleteTextView
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:fontFamily="@font/dm_sans_medium"
+            android:inputType="text"
+            android:singleLine="true"
+            android:completionThreshold="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:fontFamily="@font/dm_sans_bold"
+        android:paddingVertical="@dimen/small_padding"
+        android:text = "Select Position You Are Appyling for"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etSearchJobPosition"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_margin"
+        android:hint="@string/field_search"
+        app:boxStrokeColor="@color/box_stroke_color"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/text_color"
+        app:placeholderText="Software Developer-1"
+        app:startIconDrawable="@drawable/ic_search">
+
+        <AutoCompleteTextView
+            android:id="@+id/etPosition"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+
+            android:fontFamily="@font/dm_sans_medium"
+            android:inputType="text"
+            android:completionThreshold="1"
+        android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnApply"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/dm_sans_medium"
+        android:layout_gravity="center"
+        android:text="Search "
+        android:textColor="@color/text_color"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        app:backgroundTint="@color/light_orange"
+        app:chipCornerRadius="8dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/employee_detail_card" />
+
+</LinearLayout>
+
