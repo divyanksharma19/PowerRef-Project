@@ -118,18 +118,17 @@
 <!--                android:textAlignment="center"-->
 <!--                app:chipCornerRadius="8dp" />-->
 
-            <com.google.android.material.chip.Chip
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/linkedinBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+android:backgroundTint="@color/light_blue"
                 android:layout_marginHorizontal="@dimen/small_margin"
                 android:layout_weight="1"
-                app:chipBackgroundColor="@color/light_blue"
-                android:textColor="@color/text_color"
-                android:textAlignment="center"
-                app:chipCornerRadius="8dp"
+               android:textColor="@color/text_color"
+              android:fontFamily="@font/dm_sans_medium"
                 android:textSize="14sp"
-                tools:text="LinkedIn" />
+                android:text="LinkedIn" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnApply"

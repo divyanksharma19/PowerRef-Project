@@ -72,6 +72,11 @@ class UserAccount : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // Needed if starting activity from non-activity context
             startActivity(intent)
         }
+        binding.cvManageAccount.setOnClickListener {
+            val intent = Intent(this@UserAccount,EditAccountDetails::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
         binding.cvLogout.setOnClickListener {
             logoutBottomSheet()
         }

@@ -25,8 +25,8 @@
                 android:id="@+id/ED_edit_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit Details"
-                android:fontFamily="@font/raleway_bold"
+                android:text="Build Resume"
+                android:fontFamily="@font/dm_sans_medium"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -195,10 +195,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
+
                 android:paddingBottom="15dp"
-                android:text="View CV"
+                android:text="View Resume"
                 android:textSize="20sp"
+                android:fontFamily="@font/dm_sans_medium"
+
                 app:icon="@drawable/ic_remove_red_eye_black_24dp"
+
                 app:iconGravity="textStart"/>
 
         </LinearLayout>

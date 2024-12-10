@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_home"
         android:title="@string/menu_field_home" />
 
-    <item
-        android:id="@+id/jobsFragment"
-        android:icon="@drawable/ic_alert"
-        android:title="Jobs" />
 
     <item
         android:id="@+id/resumeFragment"
